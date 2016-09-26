@@ -1,0 +1,22 @@
+<div class="modal-content">
+  <div class="modal-header">
+    <button type="button" class="close" ng-click="$dismiss()" aria-label="Close"> <em class="fa fa-close"></em>
+    </button>
+    <h4 class="modal-title" id="myModalLabel" ng-bind="title"></h4>
+  </div>
+  <div class="modal-body article" >
+  <div ng-bind-html="content"></div>
+  <div class="kf">
+		<ul class="clearfix">
+			<li class="item" ng-repeat="v in ::kf">
+				<div class="icon" >
+					<a ng-href="{{v.url}}" title="{{v.title}}">
+						<img ng-src="{{v.icon}}" height="75" width="75"></a>
+				</div>
+				<a ng-href="{{v.url}}" title="点击交谈">
+					<img src="assets/images/icon-qq-2.png"></a>
+			</li>
+		</ul>
+	</div>
+  </div>
+</div>

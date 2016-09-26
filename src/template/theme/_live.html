@@ -1,0 +1,64 @@
+<div id="live" ng-controller="ChatCtrl">
+	<div class="notice">
+		<span class="title">当前解答:</span>
+		<span class="name" ng-bind="chat.top.name"></span>
+		<marquee direction="left" scrollamount="3" onmouseover="this.stop()" onmouseout="this.start()">
+			<span ng-bind-html="chat.top.content"></span>
+		</marquee>
+	</div>
+	<div class="live_talk">
+		<div class="chat" ng-scrollbars ng-scrollbars-update="updateScrollbar" ng-class="{admin:chat.admin}">
+			<ul>
+				<li class="item" ng-repeat="v in chat.list"  role="{{::v.role}}">
+					<span class="auth" ng-if="::chat.admin" status="{{::v.status}}" role="{{::v.role}}">
+						<button class="btn btn-info" ng-click="admin.activate(v.id,$index)">通过</button>
+						<button class="btn btn-warning" ng-click="admin.settop(v.id)" ng-if="::chat.admin">置顶</button>
+						<button class="btn btn-danger" ng-click="admin.remove(v.id,$index)">移除</button>
+					</span>
+					<span class="time" ng-bind="::v.time"></span>
+					<span class="icon">
+						<img ng-src="/assets/images/icons/level/{{::v.icon}}"  title="{{::v.as}}"height="30"></span>
+					<span class="name" ng-bind="::v.name"></span>
+					<span class="to" ng-bind="::v.to" ng-if="v.to"></span>
+					<span class="text" ng-bind-html="::v.content"></span>
+				</li>
+			</ul>
+		</div>
+		<div class="tool">
+			<ul class="clearfix">
+				<li class="t-face">
+					<emotion ng-model="content">
+						<a>
+							<span class="text">表情</span>
+						</a>
+					</emotion>
+				</li>
+				<li class="t-caitiao">
+					<a ng-click="config.ct =!config.ct">
+						<span class="text">彩条</span>
+					</a>
+					<div class="caitiao_box" ng-show="config.ct">
+						<span ng-click="tool.ct('[pt顶一个]')">顶一个</span>
+						<span ng-click="tool.ct('[pt赞一个]')">赞一个</span>
+						<span ng-click="tool.ct('[pt掌声]')">掌声</span>
+						<span ng-click="tool.ct('[pt鲜花]')">鲜花</span>
+					</div>
+				</li>
+				<li class="t-clear">
+					<a ng-click="tool.clear()">
+						<span class="text">清屏</span>
+					</a>
+				</li>
+				<li class="t-scroll">
+					<a ng-click="tool.scroll()">
+						<span class="text" ng-class="{on:config.scroll}">滚动</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="edit">
+			<input type="text" class="content" ng-model="content" placeholder="观望十遍不如咨询一遍,提出您的疑惑" ng-keyup="keyup_to_send($event)">
+			<a class="send" ng-click="send()">提问</a>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,33 @@
+<div id="box" ng-controller="articleCtrl">
+	<section class="article clearfix" >
+		<section class="hot left">
+			<div class="title">
+				<span  class="text">今日热点</span>
+			</div>
+			<ul class="list" ng-scrollbars>
+				<li class="item" ng-repeat="v in ::article.hot" >
+					<img ng-src="{{v.img}}">
+					<h2 ng-bind="v.title"></h2>
+					<span>
+						{{v.description}}
+						<a ng-click="article.content(v)">查看详情</a>
+					</span>
+				</li>
+			</ul>
+		</section>
+		<section class="new left" >
+			<div class="title">
+				<span  class="text">最新消息</span>
+			</div>
+			<ul class="list" ng-scrollbars>
+				<li class="item" ng-repeat="v in ::article.new">
+					<a ng-bind="v.title" ng-click="article.content(v)"></a>
+					<span class="time" ng-bind="v.ctime" ng-href="{{v.url}}">[8/29]</span>
+				</li>
+			</ul>
+		</section>
+	</section>
+	<section class="price">
+		<img src="/assets/images/silder.png">
+	</section>
+</div>

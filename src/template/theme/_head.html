@@ -1,0 +1,15 @@
+<div id="header" ng-controller="headCtrl">
+	<div class="info left"></div>
+	<div class="kf left">
+		<ul class="clearfix">
+			<li class="item" ng-repeat="v in ::kf">
+				<div class="icon" >
+					<a ng-href="{{v.url}}" title="{{v.title}}" target="_blank">
+						<img ng-src="{{v.icon}}" height="75" width="75"></a>
+				</div>
+				<a ng-href="{{v.url}}" title="点击交谈">
+					<img src="assets/images/icon-qq-2.png"></a>
+			</li>
+		</ul>
+	</div>
+</div>

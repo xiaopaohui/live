@@ -1,0 +1,16 @@
+#top{
+  height: 45px;
+
+  background: #110e20 url(#{$images-root}logo.png) center center no-repeat;
+  .user{
+    width: 1280px;
+    padding-right: 50px;
+    margin: 0 auto;
+    color:#FFC107;
+    text-align: right;
+    line-height:45px;
+    .info{
+      color:#E91E63;
+    }
+  }
+}

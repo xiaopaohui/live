@@ -1,0 +1,7 @@
+<div id="top" ng-controller="userCtrl">
+	<div class="user">
+		<span ng-if="::user.role != 1">您的昵称为:</span>
+		<span ng-if="::user.role == 1">欢迎您管理员:</span>
+		<span class="info" ng-bind="::user.name"></span>
+	</div>
+</div>

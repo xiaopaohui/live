@@ -1,0 +1,167 @@
+@import 'theme/conf/conf';
+@import 'theme/components/components';
+$text-color: #fff;
+html{
+  height: 100%;
+  min-height: 520px;
+}
+body{
+  height: 100%;
+
+  @include main-background();
+}
+.form-control,
+.form-control:focus{
+  color: $text-color;
+  border-radius: 5px;
+  background-color: rgba(0, 0, 0, .4);
+
+  @include placeholderStyle($text-color, .9);
+}
+.form-control[disabled],
+.form-control[readonly],
+fieldset[disabled] .form-control{
+  @include placeholderStyle($text-color, .6);
+}
+.auth-main{
+  display: flex;
+
+  width: 100%;
+  height: 100%;
+
+  align-items: center;
+}
+.auth-block{
+  width: 540px;
+  margin: 0 auto;
+  padding: 32px;
+
+  color: #fff;
+  border-radius: 5px;
+
+  @include bg-translucent-dark(.55);
+  h1{
+    font-weight: $font-light;
+
+    margin-bottom: 28px;
+
+    text-align: center;
+  }
+  p{
+    font-size: 16px;
+  }
+  a{
+    transition: all .2s ease;
+    text-decoration: none;
+
+    color: $primary;
+    outline: none;
+    &:hover{
+      color: $primary-dark;
+    }
+  }
+  .control-label{
+    padding-top: 11px;
+
+    color: $text-color;
+  }
+  .form-group{
+    margin-bottom: 12px;
+  }
+}
+.auth-input{
+  width: 300px;
+  margin-bottom: 24px;
+  input{
+    font-size: 16px;
+
+    display: block;
+
+    width: 100%;
+    padding: 4px 10px;
+
+    border: none;
+    outline: none;
+  }
+}
+a.forgot-pass{
+  position: relative;
+  z-index: 2;
+
+  display: block;
+  float: right;
+
+  margin-bottom: -20px;
+
+  text-align: right;
+}
+.auth-link{
+  font-size: 16px;
+
+  display: block;
+
+  margin-bottom: 33px;
+
+  text-align: center;
+}
+.auth-sep{
+  font-size: 16px;
+  line-height: 20px;
+
+  position: relative;
+
+  display: block;
+
+  margin-top: 36px;
+  margin-bottom: 24px;
+
+  text-align: center;
+  & >span{
+    display: table-cell;
+
+    width: 30%;
+    padding: 0 24px;
+
+    white-space: nowrap;
+
+    color: $text-color;
+    & >span{
+      display: block;
+
+      margin-top: -12px;
+    }
+  }
+  &:before,
+  &:after{
+    display: table-cell;
+
+    width: 35%;
+    height: 1px;
+
+    content: '';
+
+    border-top: solid 1px $text-color;
+  }
+}
+.al-share-auth{
+  text-align: center;
+  .al-share{
+    display: inline-block;
+    float: none;
+
+    margin: 0;
+    padding: 0;
+    li{
+      margin-left: 24px;
+      &:first-child{
+        margin-left: 0;
+      }
+      i{
+        font-size: 24px;
+      }
+    }
+  }
+}
+.btn-auth{
+  color: #fff!important;
+}

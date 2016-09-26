@@ -1,0 +1,31 @@
+#header{
+  height: 150px;
+
+  background: #3f393b url(#{$images-root}bg.jpg) center center no-repeat;
+  .info{
+    width: 675px;
+    height: 100%;
+
+    background-color: rgba(35, 31, 29, .29);
+    background-image: url(#{$images-root}info.png);
+    background-repeat: no-repeat;
+    background-attachment: initial;
+    background-position: 10px center;
+    background-size: 660px;
+  }
+  .kf{
+    margin: 20px 10px;
+    padding-left: 10px;
+    .item{
+      float: left;
+
+      width: 100px;
+      margin-right: 15px;
+
+      text-align: center;
+      .icon{
+        margin-bottom: 10px;
+      }
+    }
+  }
+}

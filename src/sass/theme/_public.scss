@@ -1,0 +1,131 @@
+/*-------------   重置  ----------------------*/
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+form,
+fieldset,
+input,
+textarea,
+p,
+blockquote,
+table,
+th,
+td,
+button{
+  margin: 0;
+  padding: 0;
+}
+fieldset,
+img,
+button{
+  border: 0;
+}
+table{
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+ol,
+ul{
+  list-style: none;
+}
+caption,
+th,
+li,
+dt,
+dd,
+p{
+  text-align: left;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6{
+  font-size: 100%;
+  font-weight: normal;
+
+  text-align: left;
+}
+q:before,
+q:after{
+  content: '';
+}
+abbr,
+acronym{
+  border: 0;
+}
+a{
+  text-decoration: none;
+
+  outline: none;
+}
+
+.clear:after{
+  display: block;
+  visibility: hidden;
+  clear: both;
+
+  height: 0;
+
+  content: '.';
+}
+/* Hides from IE-mac \*/
+* html .clear{
+  height: 1%;
+}
+.clear{
+  display: block;
+}
+/* End hide from IE-mac */
+
+button{
+  cursor: pointer;
+}
+em{
+  font-style: normal;
+}
+
+/*------------- 公用  ----------------------*/
+body{
+  font: 14px '微软雅黑';
+}
+.left{
+  display: inline;
+  float: left;
+}
+.right{
+  display: inline;
+  float: right;
+}
+.w1300{
+  width: 1300px;
+}
+.center{
+  margin: 0 auto;
+}
+.martm24{
+  margin: 24px 0;
+}
+::-webkit-scrollbar{
+  width: 0;
+  height: 0;
+}
+@media (min-width: 768px){
+  .modal-dialog{
+    width: 600px;
+    margin: 50px auto 30px;
+  }
+}

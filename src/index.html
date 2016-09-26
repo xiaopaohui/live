@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-CN" ng-app="Live">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>官网首页</title>
+  <!-- build:css /styles/vendor.css -->
+  <!-- bower:css -->
+  <!-- run `gulp inject` to automatically populate bower styles dependencies -->
+  <!-- endbower -->
+  <!-- endbuild -->
+
+  <!-- build:css({.tmp/serve,src}) /styles/main.css -->
+  <!-- inject:/app/main.css -->
+  <!-- endinject -->
+  <!-- endbuild -->
+
+  <!--[if lt IE 9]>
+  <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+  <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+</head>
+<body ng-cloak>
+  <div id="preloader" ng-show="!$pageFinishedLoading">
+    <div></div>
+    <span class="ts">加载中,请稍后</span>
+  </div>
+  <main ng-if="$pageFinishedLoading">
+    <!-- inject:/template/theme/_top.html -->
+    <!-- endinject -->
+    <section id="wrap">
+    <div class="position">
+      <!-- inject:/template/theme/_head.html -->
+      <!-- endinject -->
+      <!-- inject:/template/theme/_box.html -->
+      <!-- endinject -->
+      <!-- inject:/template/theme/_live.html -->
+      <!-- endinject --> 
+      </div>
+      </section>
+      <div class="foot">
+        <!-- inject:/template/theme/_foot.html -->
+        <!-- endinject -->
+      </div>
+  </main>
+
+  <!-- build:js /scripts/vendor.js -->
+  <!-- bower:js -->
+  <!-- run `gulp inject` to automatically populate bower script dependencies -->
+  <!-- endbower -->
+  <!-- endbuild -->
+
+  <!-- build:js({.tmp/serve,.tmp/partials,src}) /scripts/main.js -->
+  <!-- inject:js -->
+  <!-- endinject -->
+
+  <!-- inject:partials -->
+  <!-- endinject -->
+  <!-- endbuild -->
+
+</body>
+</html>
